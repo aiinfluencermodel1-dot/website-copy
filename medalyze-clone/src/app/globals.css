@@ -1,0 +1,376 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Satoshi Custom", "Satoshi", system-ui, -apple-system, sans-serif;
+  --font-display: "Gt America Extended Custom", "GT America Extended", system-ui, sans-serif;
+}
+
+:root {
+  --accent: #a8f4ff;
+  --accent-2: #3351f1;
+  --accent-2-dark: #0f31e2;
+  --blue: #2d62ff;
+  --ink: #000;
+  --grey: #d9d9d9;
+  --grey-mid: #aeaeae;
+  --grey-dark: #7b7b7b;
+  --charcoal: #0d0d0d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: #000;
+    color: #d9d9d9;
+    font-family: "Satoshi Custom", "Satoshi", system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Gt America Extended Custom", "GT America Extended", system-ui, sans-serif;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  ::selection {
+    background: #a8f4ff;
+    color: #000;
+  }
+}
+
+/* ── Fonts (Satoshi + GT America Extended) ─────────────────────────────── */
+@font-face {
+  font-family: "Satoshi Custom";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi Custom";
+  src: url("/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi Custom";
+  src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi Custom";
+  src: url("/fonts/Satoshi-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gt America Extended Custom";
+  src: url("/fonts/GT-America-Extended-Light.otf") format("opentype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gt America Extended Custom";
+  src: url("/fonts/GT-America-Extended-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gt America Extended Custom";
+  src: url("/fonts/GT-America-Extended-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gt America Extended Custom";
+  src: url("/fonts/GT-America-Extended-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* ── Container ─────────────────────────────────────────────────────────── */
+.container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 75rem;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .container-page {
+    padding-inline: 5rem;
+  }
+}
+.container-xlarge {
+  max-width: 68.8rem;
+}
+.container-wide {
+  max-width: 80rem;
+}
+
+/* ── Typography helpers ────────────────────────────────────────────────── */
+.heading-h1 {
+  font-family: "Gt America Extended Custom", "GT America Extended", sans-serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.0675em;
+  font-weight: 300;
+}
+.heading-h2 {
+  font-family: "Gt America Extended Custom", "GT America Extended", sans-serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.0675em;
+  font-weight: 400;
+}
+.heading-h3 {
+  font-family: "Gt America Extended Custom", "GT America Extended", sans-serif;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  letter-spacing: 0.0225rem;
+  font-weight: 300;
+}
+.heading-h4 {
+  font-family: "Gt America Extended Custom", "GT America Extended", sans-serif;
+  font-size: 2rem;
+  line-height: 1.3;
+  letter-spacing: -0.0675em;
+  font-weight: 300;
+}
+.heading-cta {
+  font-family: "Gt America Extended Custom", "GT America Extended", sans-serif;
+  font-size: 8rem;
+  line-height: 1;
+  letter-spacing: -0.0675em;
+  font-weight: 300;
+}
+@media (max-width: 991px) { .heading-cta { font-size: 6rem; } }
+@media (max-width: 767px) { .heading-cta { font-size: 4.75rem; } }
+@media (max-width: 478px) { .heading-cta { font-size: 3.5rem; } }
+
+.text-xlarge { font-size: 1.75rem; line-height: 1.3; }
+.text-large { font-size: 1.5rem; line-height: 1.3; }
+.text-medium { font-size: 1.25rem; line-height: 1.3; }
+.text-regular { font-size: 1rem; line-height: 1.3; }
+.text-small { font-size: 0.875rem; line-height: 1.4; }
+.text-tiny { font-size: 0.75rem; line-height: 1.4; }
+
+.font-display { font-family: "Gt America Extended Custom", "GT America Extended", sans-serif; }
+.font-body { font-family: "Satoshi Custom", "Satoshi", sans-serif; }
+
+/* ── Buttons (commure style) ───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38rem;
+  background: #a8f4ff;
+  color: #000;
+  border: 1px solid transparent;
+  border-radius: 10rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+.btn:hover { transform: scale(1.02); }
+.btn-v2 {
+  border-radius: 0.25rem;
+  padding: 0.62rem 1rem;
+  box-shadow: 0 0 4px #a8f4ff;
+}
+.btn-v2:hover { box-shadow: 0 0 14px #a8f4ff; }
+.btn-outline {
+  background: transparent;
+  color: #a8f4ff;
+  border: 1px solid #a8f4ff;
+}
+.btn-outline:hover { background: rgba(168, 244, 255, 0.1); transform: scale(1.01); }
+.btn-black {
+  background: #000;
+  color: #fff;
+  border-radius: 1.25rem;
+  font-weight: 700;
+}
+.btn-borderless {
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+.btn-borderless:hover { color: #a8f4ff; transform: none; }
+
+/* Animated "Let's Talk" button (text roll + radial glow) */
+.btn-animated {
+  position: relative;
+}
+.btn-animated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(rgb(255 255 255 / 70%), rgb(0 0 0 / 40%));
+  filter: blur(0.625rem);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), opacity 0.6s;
+}
+.btn-animated:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+.btn-animated .btn_text-wrap {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-shadow: 0 1.5em;
+}
+.btn-animated .btn_text {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
+}
+.btn-animated:hover .btn_text { transform: translateY(-100%); }
+
+/* ── Feature chips (gradient hairline pill) ────────────────────────────── */
+.chip-border {
+  border-radius: 2.625rem;
+  padding: 1px;
+  background-image: linear-gradient(157deg, #fff 1.46%, #fff0 50.73%, #fff);
+}
+.chip {
+  display: flex;
+  align-items: center;
+  background: #0d0d0d;
+  border-radius: 2.625rem;
+  padding: 0.38rem 0.88rem;
+  white-space: nowrap;
+}
+.chip-label { font-size: 0.85rem; color: #fff; }
+
+/* Gradient hairline card border */
+.hairline {
+  background-image: linear-gradient(160deg, #fff 1.46%, #fff0 50.73%, #fff);
+  border-radius: 0.625rem;
+  padding: 1px;
+}
+.hairline-inner {
+  background: #000;
+  border-radius: 0.625rem;
+}
+
+/* ── Announcement / banner bar ─────────────────────────────────────────── */
+.announce-bar {
+  background: #111;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+/* ── Pills / stat pills ────────────────────────────────────────────────── */
+.pill-border {
+  border-radius: 2.625rem;
+  padding: 1px;
+  background-image: linear-gradient(157deg, #fff 1.46%, #fff0 50.73%, #fff);
+}
+.pill {
+  background: #0d0d0d;
+  border-radius: 2.625rem;
+  padding: 0.38rem 0.88rem 0.38rem 0.62rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* ── Swiper overrides (dark) ───────────────────────────────────────────── */
+.swiper-pagination-bullet {
+  width: 0.625rem;
+  height: 0.625rem;
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,0.6) !important;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background: #a8f4ff !important;
+  border-color: #a8f4ff !important;
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────────────── */
+@keyframes fadeInUpSmooth {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes logo-marquee-loop {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+@keyframes logo-marquee-loop2 {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+@keyframes button-marquee-loop {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(50%); }
+}
+@keyframes animateBGLogo {
+  from { transform: rotateZ(0deg); }
+  to { transform: rotateZ(180deg); }
+}
+@keyframes animateRing {
+  0% { transform: scale(1.5) rotateX(0deg) rotateY(0deg); }
+  100% { transform: scale(1.5) rotateX(360deg) rotateY(360deg); }
+}
+@keyframes pageLoader {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+  50.01% { transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ── Lenis smooth scroll ───────────────────────────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ── Rotating logo ring (offset-path orbit) ───────────────────────────── */
+.ring-icon-badge {
+  offset-rotate: 0deg;
+}
+.ring-token,
+.ring-badge {
+  offset-rotate: 0deg;
+}
+.ring-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -1.7rem 0 0 -1.7rem;
+  offset-path: circle(50% at 50% 50%);
+}
+
+/* Hide scrollbar for marquees */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* GSAP initial-hidden safe fallback */
+.gsap-hidden { will-change: transform, opacity; }
